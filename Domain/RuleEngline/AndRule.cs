@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.RuleEngline;
+﻿namespace Domain;
 
 public class AndRule<T> : BaseRule<T>
 {

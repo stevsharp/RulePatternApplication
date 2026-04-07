@@ -1,7 +1,5 @@
 ﻿using Domain.Aggregates;
 
-using Infrastructure.RuleEngline;
-
 namespace Domain.Rules;
 
 public class OrderMinimumAmountRule(decimal minimum) : BaseRule<Order>

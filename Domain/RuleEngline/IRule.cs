@@ -1,5 +1,4 @@
-﻿namespace Infrastructure.RuleEngline;
-
+﻿namespace Domain;
 
 
 public interface IRule<T>

@@ -1,6 +1,7 @@
 ﻿using Application.Common;
 
 using Domain.Aggregates;
+using Domain.RuleEngline;
 using Domain.Rules;
 
 using Infrastructure;
@@ -25,8 +26,10 @@ public class PlaceOrderCommandHandler(IOrderRepository orders, ICustomerReposito
             .And(new CustomerVerifiedRule())
             .And(new CreditLimitRule());
 
-        if (!rule.IsSatisfiedBy(order))
-            return Result.Failure(rule.ErrorMessage);
+        var validationResult = rule.ToResult(order);
+
+        if (validationResult.IsFailure)
+            return validationResult;
 
         order.Place();
         await _orders.AddAsync(order, cancellationToken);

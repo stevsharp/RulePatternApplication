@@ -3,8 +3,9 @@
 using Infrastructure;
 
 namespace Application.Features.Orders.Commands;
-
-public record PlaceOrderCommand(
-    Guid CustomerId,
-    List<OrderLineDto> Lines
-) : ICommand;
+/// <summary>
+/// 
+/// </summary>
+/// <param name="CustomerId"></param>
+/// <param name="Lines"></param>
+public record PlaceOrderCommand(Guid CustomerId, List<OrderLineDto> Lines) : ICommand;

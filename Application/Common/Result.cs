@@ -4,7 +4,7 @@ public class Result(bool isSuccess, string? error)
 {
     public bool IsSuccess { get; } = isSuccess;
     public string? Error { get; } = error;
-
+    public bool IsFailure => !IsSuccess;
     public static Result Success() => new(true, null);
     public static Result Failure(string error) => new(false, error);
 

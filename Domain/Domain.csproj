@@ -7,4 +7,10 @@
     <LangVersion>Latest</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Application">
+      <HintPath>..\Application\obj\Debug\net9.0\ref\Application.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
